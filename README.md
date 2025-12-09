@@ -270,11 +270,14 @@ python mmdet3d_inference2.py `
 
 ### Running Inference on nuScenes Mini Dataset
 
-5. **Run inference on nuScenes mini sample:**
+5. **Run inference on full nuScenes Mini dataset:**
    ```powershell
+   # Ensure PYTHONPATH includes the mmdetection3d directory
+   $env:PYTHONPATH = "external\mmdetection3d;" + $env:PYTHONPATH
+
    python mmdet3d_inference2.py `
      --dataset any `
-     --input-path data\nuscenes\mini\samples\LIDAR_TOP\n008-2018-08-01-15-16-36-0400__LIDAR_TOP__1533151603547590.pcd.bin `
+     --input-path data\v1.0-mini\samples\LIDAR_TOP `
      --model external\mmdetection3d\projects\BEVFusion\configs\bevfusion_lidar_voxel0075_second_secfpn_8xb4-cyclic-20e_nus-3d.py `
      --checkpoint checkpoints\bevfusion_lidar\bevfusion_lidar_voxel0075_second_secfpn_8xb4-cyclic-20e_nus-3d-2628f933_fixed.pth `
      --out-dir outputs\bevfusion_nuscenes_mini `

@@ -1,20 +1,30 @@
 {
-  "kitti": {
+  "kitti_pointpillars": {
     "detections": 10,
-    "mean_score": 0.7922263324260712,
-    "score_std": 0.1685958339531911,
-    "max_score": 0.9750319123268127,
-    "min_score": 0.441741943359375,
+    "mean_score": 0.7922261893749237,
+    "score_std": 0.16859600528026095,
+    "max_score": 0.9750317931175232,
+    "min_score": 0.4417417049407959,
     "class_counts": {
       "Car": 10
     }
   },
-  "nuscenes": {
+  "kitti_pointpillars_3class": {
+    "detections": 10,
+    "mean_score": 0.789794385433197,
+    "score_std": 0.13881135674543374,
+    "max_score": 0.9519413113594055,
+    "min_score": 0.5039312839508057,
+    "class_counts": {
+      "Cyclist": 10
+    }
+  },
+  "nuscenes_pointpillars": {
     "detections": 365,
-    "mean_score": 0.1265643775565167,
-    "score_std": 0.09538090043502319,
-    "max_score": 0.7109364867210388,
-    "min_score": 0.05018952488899231,
+    "mean_score": 0.1265644425704871,
+    "score_std": 0.09538091990819574,
+    "max_score": 0.7109369039535522,
+    "min_score": 0.05018964782357216,
     "class_counts": {
       "car": 74,
       "truck": 28,
@@ -26,6 +36,51 @@
       "bicycle": 95,
       "pedestrian": 29,
       "traffic_cone": 88
+    }
+  },
+  "bevfusion": {
+    "detections": 200,
+    "mean_score": 0.11078140034394814,
+    "score_std": 0.19264934989447893,
+    "max_score": 0.772049069404602,
+    "min_score": 2.2277778555235273e-07,
+    "class_counts": {
+      "pedestrian": 103,
+      "barrier": 21,
+      "truck": 8,
+      "traffic_cone": 40,
+      "car": 22,
+      "motorcycle": 3,
+      "bicycle": 3
+    }
+  },
+  "centerpoint": {
+    "detections": 264,
+    "mean_score": 0.2443205269448685,
+    "score_std": 0.1826457473790347,
+    "max_score": 0.873839259147644,
+    "min_score": 0.10003476589918137,
+    "class_counts": {
+      "car": 36,
+      "truck": 16,
+      "construction_vehicle": 18,
+      "bus": 6,
+      "trailer": 7,
+      "barrier": 62,
+      "motorcycle": 10,
+      "bicycle": 26,
+      "pedestrian": 55,
+      "traffic_cone": 28
+    }
+  },
+  "3dssd": {
+    "detections": 45,
+    "mean_score": 0.1763105786761438,
+    "score_std": 0.33130735232806385,
+    "max_score": 0.9092803001403809,
+    "min_score": 0.0,
+    "class_counts": {
+      "Car": 45
     }
   }
 }

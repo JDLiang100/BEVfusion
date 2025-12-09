@@ -22,9 +22,18 @@ import sys
 # Model configurations
 MODELS = {
     'PointPillars (KITTI)': {
-        'pred_file': 'outputs/kitti_pointpillars_gpu/000008_predictions.json',
+        'pred_file': 'outputs/kitti_pointpillars/000008_predictions.json',
         'config': 'checkpoints/kitti_pointpillars/pointpillars_hv_secfpn_8xb6-160e_kitti-3d-car.py',
         'checkpoint': 'checkpoints/kitti_pointpillars/hv_pointpillars_secfpn_6x8_160e_kitti-3d-car_20220331_134606-d42d15ed.pth',
+        'dataset': 'kitti',
+        'input_path': 'data/kitti/training',
+        'frame': '000008',
+        'device': 'cpu'
+    },
+    'PointPillars 3-Class (KITTI)': {
+        'pred_file': 'outputs/kitti_pointpillars_3class/000008_predictions.json',
+        'config': 'checkpoints/kitti_pointpillars_3class/pointpillars_hv_secfpn_8xb6-160e_kitti-3d-3class.py',
+        'checkpoint': 'checkpoints/kitti_pointpillars_3class/hv_pointpillars_secfpn_6x8_160e_kitti-3d-3class_20220301_150306-37dc2420.pth',
         'dataset': 'kitti',
         'input_path': 'data/kitti/training',
         'frame': '000008',
@@ -37,10 +46,10 @@ MODELS = {
         'dataset': 'any',
         'input_path': 'data/nuscenes_demo/lidar/sample.pcd.bin',
         'frame': None,
-        'device': 'cuda:0'
+        'device': 'cpu'
     },
     '3DSSD (KITTI)': {
-        'pred_file': 'outputs/3dssd/000008_predictions.json',
+        'pred_file': 'outputs/kitti_3dssd_gpu/000008_predictions.json',
         'config': 'checkpoints/3dssd/3dssd_4x4_kitti-3d-car.py',
         'checkpoint': 'checkpoints/3dssd/3dssd_4x4_kitti-3d-car_20210818_203828-b89c8fc4.pth',
         'dataset': 'kitti',
@@ -49,11 +58,29 @@ MODELS = {
         'device': 'cuda:0'
     },
     'CenterPoint (nuScenes)': {
-        'pred_file': 'outputs/nuscenes_centerpoint/sample.pcd_predictions.json',
+        'pred_file': 'outputs/nuscenes_centerpoint_gpu/sample.pcd_predictions.json',
         'config': 'checkpoints/nuscenes_centerpoint/centerpoint_voxel01_second_secfpn_head-circlenms_8xb4-cyclic-20e_nus-3d.py',
         'checkpoint': 'checkpoints/nuscenes_centerpoint/centerpoint_01voxel_second_secfpn_circlenms_4x8_cyclic_20e_nus_20220810_030004-9061688e.pth',
         'dataset': 'any',
         'input_path': 'data/nuscenes_demo/lidar/sample.pcd.bin',
+        'frame': None,
+        'device': 'cuda:0'
+    },
+    'BEVFusion (nuScenes)': {
+        'pred_file': 'outputs/bevfusion_lidar_fixed/sample.pcd_predictions.json',
+        'config': 'external/mmdetection3d/projects/BEVFusion/configs/bevfusion_lidar_voxel0075_second_secfpn_8xb4-cyclic-20e_nus-3d.py',
+        'checkpoint': 'checkpoints/bevfusion_lidar/bevfusion_lidar_voxel0075_second_secfpn_8xb4-cyclic-20e_nus-3d-2628f933_fixed.pth',
+        'dataset': 'any',
+        'input_path': 'data/nuscenes_demo/lidar/sample.pcd.bin',
+        'frame': None,
+        'device': 'cuda:0'
+    },
+    'BEVFusion (nuScenes Mini)': {
+        'pred_file': 'outputs/bevfusion_nuscenes_mini/all_predictions.json',
+        'config': 'external/mmdetection3d/projects/BEVFusion/configs/bevfusion_lidar_voxel0075_second_secfpn_8xb4-cyclic-20e_nus-3d.py',
+        'checkpoint': 'checkpoints/bevfusion_lidar/bevfusion_lidar_voxel0075_second_secfpn_8xb4-cyclic-20e_nus-3d-2628f933_fixed.pth',
+        'dataset': 'any',
+        'input_path': 'data/v1.0-mini/samples/LIDAR_TOP',
         'frame': None,
         'device': 'cuda:0'
     }

@@ -101,8 +101,8 @@ def fix_checkpoint(input_path, output_path):
     # Save fixed checkpoint
     print(f"\nSaving fixed checkpoint to {output_path}...")
     torch.save(checkpoint, output_path)
-    print(f"✅ Fixed {fixed_count} weight tensors")
-    print(f"✅ Checkpoint saved to {output_path}")
+    print(f"[DONE] Fixed {fixed_count} weight tensors")
+    print(f"[DONE] Checkpoint saved to {output_path}")
 
 
 if __name__ == '__main__':

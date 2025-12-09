@@ -23,6 +23,11 @@ desktop.ini
 # Large/model artifacts
 external/
 checkpoints/
+work_dirs/
+data/
+*.pth
+*.tgz
+
 outputs/**/*.ply
 outputs/**/*.pcd
 outputs/**/*.bin
